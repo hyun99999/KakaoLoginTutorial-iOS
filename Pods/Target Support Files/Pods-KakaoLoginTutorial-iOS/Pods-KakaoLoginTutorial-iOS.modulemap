@@ -1,0 +1,6 @@
+framework module Pods_KakaoLoginTutorial_iOS {
+  umbrella header "Pods-KakaoLoginTutorial-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
