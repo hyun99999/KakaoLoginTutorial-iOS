@@ -10,10 +10,16 @@ import KakaoSDKUser
 
 class LogoutViewController: UIViewController {
 
+    
+    @IBOutlet weak var nicknameText: UILabel!
+    @IBOutlet weak var emailText: UILabel!
+    
+    var nickname: String?
+    var email: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setUI()
     }
 
     @IBAction func logoutClicked(_ sender: Any) {
@@ -27,8 +33,7 @@ class LogoutViewController: UIViewController {
                 print("logout() success.")
                 
                 // ✅ 로그아웃 시 메인으로 보냄
-                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else { return }
-                self.navigationController?.pushViewController(nextVC, animated: true)
+                self.navigationController?.popViewController(animated: true)
             }
         }
     }
@@ -43,9 +48,24 @@ class LogoutViewController: UIViewController {
                 print("unlink() success.")
                 
                 // ✅ 연결끊기 시 메인으로 보냄
-                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else { return }
-                self.navigationController?.pushViewController(nextVC, animated: true)
+                self.navigationController?.popViewController(animated: true)
             }
+        }
+    }
+}
+
+extension LogoutViewController {
+    private func setUI() {
+        // ✅ 사용자 정보 보여주기
+        if let nickname = nickname {
+            nicknameText.text = "\(nickname)님 환영합니다."
+        }
+        // ✅ 닉네임의 경우 필수동의 항목이라서 else 문이 필요하지 않았다.
+
+        if let emial = email {
+            emailText.text = "\(emial)님 환영합니다."
+        } else {
+            emailText.text = "이메일 정보 수집을 동의하십시오."
         }
     }
 }

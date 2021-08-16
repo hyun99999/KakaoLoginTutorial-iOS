@@ -74,38 +74,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인이 되었습니다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fng-LU-FFe">
-                                <rect key="frame" x="136" y="312" width="142" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fng-LU-FFe">
+                                <rect key="frame" x="186.5" y="284" width="41.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbR-cm-DbX">
-                                <rect key="frame" x="181" y="403" width="52" height="30"/>
+                                <rect key="frame" x="181" y="406" width="52" height="30"/>
                                 <state key="normal" title="로그아웃"/>
                                 <connections>
                                     <action selector="logoutClicked:" destination="bjn-Hd-Nnv" eventType="touchUpInside" id="J7H-rj-XUZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neQ-Bl-N4E">
-                                <rect key="frame" x="146.5" y="478" width="121" height="30"/>
+                                <rect key="frame" x="146.5" y="481" width="121" height="30"/>
                                 <state key="normal" title="카카오계정 연결끊기"/>
                                 <connections>
                                     <action selector="unlinkClicked:" destination="bjn-Hd-Nnv" eventType="touchUpInside" id="yxx-rb-qlv"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2B-oY-Pna">
+                                <rect key="frame" x="186" y="325" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="twj-dU-I97"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="tbR-cm-DbX" firstAttribute="top" secondItem="n2B-oY-Pna" secondAttribute="bottom" constant="60" id="OCr-Nk-9Yg"/>
                             <constraint firstItem="tbR-cm-DbX" firstAttribute="centerX" secondItem="Oqv-jN-tsr" secondAttribute="centerX" id="OP4-Oh-YgO"/>
-                            <constraint firstItem="tbR-cm-DbX" firstAttribute="top" secondItem="fng-LU-FFe" secondAttribute="bottom" constant="70" id="UMZ-Eq-WEB"/>
-                            <constraint firstItem="fng-LU-FFe" firstAttribute="top" secondItem="twj-dU-I97" secondAttribute="top" constant="268" id="VzB-Zi-wKh"/>
+                            <constraint firstItem="n2B-oY-Pna" firstAttribute="top" secondItem="fng-LU-FFe" secondAttribute="bottom" constant="20" id="Ykd-Xh-3CX"/>
                             <constraint firstItem="neQ-Bl-N4E" firstAttribute="top" secondItem="tbR-cm-DbX" secondAttribute="bottom" constant="45" id="fwy-cb-rYG"/>
+                            <constraint firstItem="n2B-oY-Pna" firstAttribute="centerX" secondItem="Oqv-jN-tsr" secondAttribute="centerX" id="fyS-Fv-cxQ"/>
                             <constraint firstItem="fng-LU-FFe" firstAttribute="centerX" secondItem="Oqv-jN-tsr" secondAttribute="centerX" id="nJe-uR-h2k"/>
+                            <constraint firstItem="fng-LU-FFe" firstAttribute="top" secondItem="twj-dU-I97" secondAttribute="top" constant="240" id="pwP-eK-2QV"/>
                             <constraint firstItem="neQ-Bl-N4E" firstAttribute="centerX" secondItem="Oqv-jN-tsr" secondAttribute="centerX" id="xAg-AY-J4e"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailText" destination="n2B-oY-Pna" id="qlc-tn-lqC"/>
+                        <outlet property="nicknameText" destination="fng-LU-FFe" id="LPw-cA-yfm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vmG-Qv-rTU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

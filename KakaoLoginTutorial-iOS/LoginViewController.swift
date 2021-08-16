@@ -12,8 +12,13 @@ import KakaoSDKAuth
 import KakaoSDKCommon
 
 class LoginViewController: UIViewController {
+    
+    // MARK: - @IBOutlet Prperties
+    
     @IBOutlet weak var loginWithKakaoImageView: UIImageView!
     @IBOutlet weak var loginWithKakaoaccountImageView: UIImageView!
+    
+    // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +28,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         // ✅ 유효한 토큰 검사
-        
-        let kakaoOauthToken = UserDefaults.standard.string(forKey: "KakaoOauthToken") ?? ""
-        print("kakaoOauthToken: \(kakaoOauthToken)")
-        
         if (AuthApi.hasToken()) {
             UserApi.shared.accessTokenInfo { (_, error) in
                 if let error = error {
@@ -40,9 +42,9 @@ class LoginViewController: UIViewController {
                 }
                 else {
                     //토큰 유효성 체크 성공(필요 시 토큰 갱신됨)
-                    // ✅ 토큰이 유효하면 로그인된 화면으로 보낸다.
-                    guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LogoutViewController") as? LogoutViewController else { return }
-                    self.navigationController?.pushViewController(nextVC, animated: true)
+                    
+                    // ✅ 사용자 정보를 가져오고 화면전환을 하는 커스텀 메서드
+                    self.getUserInfo()
                 }
             }
         }
@@ -51,6 +53,8 @@ class LoginViewController: UIViewController {
         }
     }
 }
+
+// MARK: - Extensions
 
 extension LoginViewController {
     
@@ -79,6 +83,29 @@ extension LoginViewController {
         loginWithKakaoaccountImageView.addGestureRecognizer(loginKakaoAccount)
     }
     
+    private func getUserInfo() {
+        // ✅ 사용자 정보 가져오기
+        UserApi.shared.me() {(user, error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                print("me() success.")
+                
+                // ✅ 사용자정보를 성공적으로 가져오면 화면전환 한다.
+                let nickname = user?.kakaoAccount?.profile?.nickname
+                let email = user?.kakaoAccount?.email
+                
+                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LogoutViewController") as? LogoutViewController else { return }
+                
+                // ✅ 사용자 정보 넘기기
+                nextVC.nickname = nickname
+                nextVC.email = email
+                self.navigationController?.pushViewController(nextVC, animated: true)
+            }
+        }
+    }
+    
     // MARK: - @objc Methods
     
     // ✅ 회원가입 구현
@@ -96,13 +123,11 @@ extension LoginViewController {
                     print("loginWithKakaoTalk() success.")
                     
                     // ✅ 회원가입 성공 시 oauthToken 저장
-                    let kakoOauthToken = oauthToken
-                    //                    UserDefaults.standard.set(kakoOauthToken, forKey: "KakoOauthToken")
+//                    let kakoOauthToken = oauthToken
+                    //UserDefaults.standard.set(kakoOauthToken, forKey: "KakoOauthToken")
                     
-                    // ✅ 화면전환
-                    guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LogoutViewController") as? LogoutViewController else { return }
-                    self.navigationController?.pushViewController(nextVC, animated: true)
-                    
+                    // ✅ 사용자정보를 성공적으로 가져오면 화면전환 한다.
+                    self.getUserInfo()
                 }
             }
         }
@@ -125,12 +150,10 @@ extension LoginViewController {
                 print("loginWithKakaoAccount() success.")
                 
                 // ✅ 회원가입 성공 시 oauthToken 저장
-                let kakoOauthToken = oauthToken
-//                UserDefaults.standard.set(kakoOauthToken, forKey: "KakoOauthToken")
+                // _ = oauthToken
                 
-                // ✅ 화면전환
-                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LogoutViewController") as? LogoutViewController else { return }
-                self.navigationController?.pushViewController(nextVC, animated: true)
+                // ✅ 사용자정보를 성공적으로 가져오면 화면전환 한다.
+                self.getUserInfo()
             }
         }
     }
