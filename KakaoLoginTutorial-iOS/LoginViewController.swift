@@ -108,7 +108,8 @@ extension LoginViewController {
     
     // MARK: - @objc Methods
     
-    // ✅ 회원가입 구현
+    // ✅ 카카오로그인 이미지에 UITapGestureRecognizer 를 등록할 때 사용할 @objc 메서드.
+    // ✅ 카카오톡으로 로그인
     @objc
     func loginKakao() {
         print("loginKakao() called.")
@@ -137,6 +138,8 @@ extension LoginViewController {
         }
     }
     
+    // ✅ 카카오로그인 이미지에 UITapGestureRecognizer 를 등록할 때 사용할 @objc 메서드.
+    // ✅ 카카오계정으로 로그인
     @objc
     func loginKakaoAccount() {
         print("loginKakaoAccount() called.")
