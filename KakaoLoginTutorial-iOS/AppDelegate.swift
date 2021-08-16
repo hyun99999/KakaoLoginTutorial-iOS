@@ -7,20 +7,28 @@
 
 import UIKit
 import KakaoSDKCommon
+import KakaoSDKAuth
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        KakaoSDKCommon.initSDK(appKey: "NATIVE_APP_KEY")
-        
+
+        KakaoSDKCommon.initSDK(appKey: "bcc7e7cecaead6ec441944e3bdada1e6")
+
         return true
     }
-
+    
+//    iOS 13 미만으로 프로젝트를 만들 경우.
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+//        if (AuthApi.isKakaoTalkLoginUrl(url)) {
+//                    return AuthController.handleOpenUrl(url: url)
+//                }
+//
+//        return false
+//    }
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

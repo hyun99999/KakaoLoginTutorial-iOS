@@ -10,10 +10,11 @@
 		1D7A03D3338B7D8FCAB3B500 /* Pods_KakaoLoginTutorial_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9FBE3CD95939566DB1F9A2 /* Pods_KakaoLoginTutorial_iOS.framework */; };
 		F8A6B1E226C939BA005C41BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6B1E126C939BA005C41BC /* AppDelegate.swift */; };
 		F8A6B1E426C939BA005C41BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6B1E326C939BA005C41BC /* SceneDelegate.swift */; };
-		F8A6B1E626C939BA005C41BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6B1E526C939BA005C41BC /* ViewController.swift */; };
+		F8A6B1E626C939BA005C41BC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6B1E526C939BA005C41BC /* LoginViewController.swift */; };
 		F8A6B1E926C939BA005C41BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8A6B1E726C939BA005C41BC /* Main.storyboard */; };
 		F8A6B1EB26C939BB005C41BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8A6B1EA26C939BB005C41BC /* Assets.xcassets */; };
 		F8A6B1EE26C939BB005C41BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8A6B1EC26C939BB005C41BC /* LaunchScreen.storyboard */; };
+		F8A6B1F826CA17B0005C41BC /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6B1F726CA17B0005C41BC /* LogoutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,11 +24,12 @@
 		F8A6B1DE26C939BA005C41BC /* KakaoLoginTutorial-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KakaoLoginTutorial-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A6B1E126C939BA005C41BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8A6B1E326C939BA005C41BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F8A6B1E526C939BA005C41BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F8A6B1E526C939BA005C41BC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F8A6B1E826C939BA005C41BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F8A6B1EA26C939BB005C41BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8A6B1ED26C939BB005C41BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8A6B1EF26C939BB005C41BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8A6B1F726CA17B0005C41BC /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,11 +84,12 @@
 			children = (
 				F8A6B1E126C939BA005C41BC /* AppDelegate.swift */,
 				F8A6B1E326C939BA005C41BC /* SceneDelegate.swift */,
-				F8A6B1E526C939BA005C41BC /* ViewController.swift */,
+				F8A6B1E526C939BA005C41BC /* LoginViewController.swift */,
 				F8A6B1E726C939BA005C41BC /* Main.storyboard */,
 				F8A6B1EA26C939BB005C41BC /* Assets.xcassets */,
 				F8A6B1EC26C939BB005C41BC /* LaunchScreen.storyboard */,
 				F8A6B1EF26C939BB005C41BC /* Info.plist */,
+				F8A6B1F726CA17B0005C41BC /* LogoutViewController.swift */,
 			);
 			path = "KakaoLoginTutorial-iOS";
 			sourceTree = "<group>";
@@ -205,8 +208,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8A6B1E626C939BA005C41BC /* ViewController.swift in Sources */,
+				F8A6B1E626C939BA005C41BC /* LoginViewController.swift in Sources */,
 				F8A6B1E226C939BA005C41BC /* AppDelegate.swift in Sources */,
+				F8A6B1F826CA17B0005C41BC /* LogoutViewController.swift in Sources */,
 				F8A6B1E426C939BA005C41BC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
