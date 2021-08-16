@@ -1,7 +1,9 @@
 # KakaoLoginTutorial-iOS
 👷‍♀️ login tutorial using Kakao iOS SDK
 
-**목차**
+# **목차**
+- 디자인 가이드
+
 - [설정단계](#설정단계)
   - 애플리케이션 등록
   - CocoaPods 통해 모듈 설치
