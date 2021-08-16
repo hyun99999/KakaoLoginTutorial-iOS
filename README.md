@@ -1,6 +1,8 @@
 # KakaoLoginTutorial-iOS
 👷‍♀️ login tutorial using Kakao iOS SDK
 
+<img src ="https://user-images.githubusercontent.com/69136340/129535136-1af844fa-ae83-474a-b9be-c18012a2c977.gif" width ="250">
+
 # **목차**
 - 디자인 가이드
 
