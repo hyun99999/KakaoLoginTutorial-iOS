@@ -1,6 +1,25 @@
 # KakaoLoginTutorial-iOS
 👷‍♀️ login tutorial using Kakao iOS SDK
 
+**목차**
+- [설정단계](#설정단계)
+  - 애플리케이션 등록
+  - CocoaPods 통해 모듈 설치
+  - Info.plist 설정
+  - 초기화
+
+- [시작하기 전](#시작하기-전)
+  - 카카오톡으로 로그인
+  - 기본 웹 브라우저를 통해 카카오계정으로 로그인
+
+- [시작하기](#시작하기)
+  - [카카오톡으로 로그인](#📌-카카오톡으로-로그인)
+  - [카카오톡계정으로 로그인](#📌-카카오톡계정으로-로그인)
+  - [동의 항목 설정](#📌-동의-항목-설정)
+  - [로그아웃 & 연결 끊기](#📌-로그아웃-&-연결-끊기)
+  - [사용자 정보 가져오기](#📌-사용자-정보-가져오기)
+  - [토큰 존재 여부 확인하기](#📌-토큰-존재-여부-확인하기)
+
 ### 디자인 가이드
 
 애플 로그인과 동일하게 카카오도 역시 디자인 가이드가 있다. 여기서 PNG 파일을 다운로드 할 수 있다.
@@ -9,7 +28,7 @@
 
 그러면 본격적으로 시작하기전에 설정단계를 알아보자. 아래의 내용들은 카카오 개발자문서를 요약 + 실습이다.
 
-# 👷‍♀️ 설정단계
+# 설정단계
 
 ## 1️⃣ 애플리케이션 등록
 
@@ -130,7 +149,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 [Kakao Developers getting-started/sdk-ios](https://developers.kakao.com/docs/latest/ko/getting-started/sdk-ios)
 
-# 👷‍♀️ 시작하기 전에
+# 시작하기 전
 
 **두가지 방법으로 로그인을 한다고 예고했는데 자세히 알아보자.**
 
@@ -169,7 +188,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 }
 ```
 
-# 👷‍♀️ 시작하기
+# 시작하기
 
 - Main.storyboard
 
